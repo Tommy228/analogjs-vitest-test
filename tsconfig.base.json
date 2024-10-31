@@ -1,0 +1,39 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "./dist/out-tsc",
+    "rootDir": ".",
+    "strict": true,
+    "importHelpers": true,
+    "noUnusedLocals": true,
+    "downlevelIteration": true,
+    "allowSyntheticDefaultImports": true,
+    "useDefineForClassFields": false,
+    "target": "es2022",
+    "skipLibCheck": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "declaration": false,
+    "resolveJsonModule": true,
+    "module": "esnext",
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2020", "dom", "dom.iterable"],
+    "paths": {
+      "@workspace/test-analogjs-vitest": [
+        "libs/test-analogjs-vitest/src/index.ts"
+      ],
+      "rxjs": ["./node_modules/rxjs"]
+    }
+  },
+  "angularCompilerOptions": {
+    "strictTemplates": true,
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true
+  },
+  "exclude": ["node_modules", "tmp"]
+}

@@ -1,0 +1,122 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+dist
+tmp
+/out-tsc
+
+.nx
+.angular
+.jest
+.swc
+
+# dependencies
+node_modules
+
+# IDEs and editors
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# JetBrains user-specific stuff
+
+**/.idea/**/csv-editor.xml
+**/.idea/**/workspace.xml
+**/.idea/**/tasks.xml
+**/.idea/**/usage.statistics.xml
+**/.idea/**/nx-angular-config.xml
+**/.idea/**/dictionaries
+**/.idea/**/shelf
+**/.idea/copilot
+
+# JetBrains Generated files
+**/.idea/**/contentModel.xml
+
+# JetBrains sensitive or high-churn files
+**/.idea/**/dataSources/
+**/.idea/**/dataSources.ids
+**/.idea/**/dataSources.local.xml
+**/.idea/**/sqlDataSources.xml
+**/.idea/dataSources.xml
+**/.idea/**/dynamic.xml
+**/.idea/**/uiDesigner.xml
+**/.idea/**/dbnavigator.xml
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+debug.log
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# eslint
+.eslintcache
+
+# Sonar
+.scannerwork
+
+*.swp
+*.*~
+project.lock.json
+*.pyc
+nupkg/
+
+# Visual Studio Code
+.vscode
+
+# User-specific files
+*.suo
+*.DotSettings.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+[Oo]ut/
+msbuild.log
+msbuild.err
+msbuild.wrn
+
+# Visual Studio
+.vs/
+
+#Docker
+docker-compose.override.yml
+docker-compose.generated.override.yml
+
+# NuGet
+.nuget
+
+/apps/**/.idea/*/Docker/
+/.idea/sqldialects.xml
+
+
+storybook-static

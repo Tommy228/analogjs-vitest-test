@@ -1,0 +1,12 @@
+{
+  "name": "test-analogjs-vitest",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/test-analogs-vitest/src",
+  "prefix": "app",
+  "projectType": "library",
+  "targets": {
+    "test": {
+      "executor": "@nx/vite:test"
+    }
+  }
+}
