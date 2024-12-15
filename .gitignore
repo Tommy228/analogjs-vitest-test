@@ -120,3 +120,4 @@ docker-compose.generated.override.yml
 
 
 storybook-static
+vite.config.mts.*.mjs

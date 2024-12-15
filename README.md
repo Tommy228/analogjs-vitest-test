@@ -1,49 +1,53 @@
 # Minimal reproduction
 
-Running tests on the repository with Nx gives the following result:
-
+* Install dependencies (`npm install`)
+* Run the tests
+```bash
+cd libs/test-analogjs-vitest
+npx vitest --run
 ```
-nx run test-analogjs-vitest:test          
 
-> nx run test-analogjs-vitest:test
-
+This gives the following result:
+```
  RUN  v2.1.4 C:/dev/analogjs-vitest-test/libs/test-analogjs-vitest
- ❯ src/lib/test-component/test.component.spec.ts  (0 test)
-⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
- FAIL  src/lib/test-component/test.component.spec.ts [ src/lib/test-component/test.component.spec.ts ]
-SyntaxError: Cannot use import statement outside a module
- ❯ src/test-setup.ts:4:19
-      2| 
-      3| import { getTestBed } from "@angular/core/testing";
-      4| import {
-       |                   ^
-      5|   BrowserDynamicTestingModule,
-      6|   platformBrowserDynamicTesting,
+
+stderr | src/lib/test-component/test.component.spec.ts > TestComponent > test #1
+Error: Need to call TestBed.initTestEnvironment() first
+    at TestBedImpl.get compiler [as compiler] (file:///C:/packages/core/testing/src/test_bed.ts:724:13)
+    at TestBedImpl.configureTestingModule (file:///C:/packages/core/testing/src/test_bed.ts:569:10)
+    at Function.configureTestingModule (file:///C:/packages/core/testing/src/test_bed.ts:298:33)
+    at file:///C:/dev/analogjs-vitest-test/node_modules/projects/spectator/src/lib/spectator/create-factory.ts:129:13
+    at _ZoneDelegate.invoke (C:\dev\analogjs-vitest-test\node_modules\zone.js\bundles\zone.umd.js:411:30)
+    at AsyncTestZoneSpec.onInvoke (C:\dev\analogjs-vitest-test\node_modules\zone.js\bundles\zone-testing.umd.js:1261:47)
+    at ProxyZoneSpec.onInvoke (C:\dev\analogjs-vitest-test\node_modules\zone.js\bundles\zone-testing.umd.js:297:43)
+    at _ZoneDelegate.invoke (C:\dev\analogjs-vitest-test\node_modules\zone.js\bundles\zone.umd.js:410:56)
+    at Zone.runGuarded (C:\dev\analogjs-vitest-test\node_modules\zone.js\bundles\zone.umd.js:176:51)
+    at runInTestZone (C:\dev\analogjs-vitest-test\node_modules\zone.js\bundles\zone-testing.umd.js:1409:33)
+
+ ❯ src/lib/test-component/test.component.spec.ts (1)
+   ❯ TestComponent (1)
+     × test #1
+       | [ beforeEach ]
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/lib/test-component/test.component.spec.ts > TestComponent > test #1
+Error: Need to call TestBed.initTestEnvironment() first
+ ❯ TestBedImpl.get compiler [as compiler] ../../../../packages/core/testing/src/test_bed.ts:724:13
+ ❯ TestBedImpl.configureTestingModule ../../../../packages/core/testing/src/test_bed.ts:569:10
+ ❯ Function.configureTestingModule ../../../../packages/core/testing/src/test_bed.ts:298:33
+ ❯ ../../node_modules/projects/spectator/src/lib/spectator/create-factory.ts:129:13
+ ❯ _ZoneDelegate.invoke ../../node_modules/zone.js/bundles/zone.umd.js:411:30
+ ❯ AsyncTestZoneSpec.onInvoke ../../node_modules/zone.js/bundles/zone-testing.umd.js:1261:47
+ ❯ ProxyZoneSpec.onInvoke ../../node_modules/zone.js/bundles/zone-testing.umd.js:297:43
+ ❯ _ZoneDelegate.invoke ../../node_modules/zone.js/bundles/zone.umd.js:410:56
+ ❯ Zone.runGuarded ../../node_modules/zone.js/bundles/zone.umd.js:176:51
+ ❯ runInTestZone ../../node_modules/zone.js/bundles/zone-testing.umd.js:1409:33
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
  Test Files  1 failed (1)
-      Tests  no tests
-   Start at  22:12:50
-   Duration  818ms (transform 91ms, setup 0ms, collect 0ms, tests 0ms, environment 383ms, prepare 543ms)
-Module C:/dev/analogjs-vitest-test/node_modules/@angular/core/fesm2022/testing.mjs:7 seems to be an ES Module but shipped in a CommonJS package. You might want to create an issue to the package "@angular/core" asking them to ship the file in .mjs extension or add "type": "module" in their package.json.
-As a temporary workaround you can try to inline the package by updating your config:
-// vitest.config.js
-export default {
-  test: {
-    server: {
-      deps: {
-        inline: [
-          "@angular/core"
-        ]
-      }
-    }
-  }
-}
-
-⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
-
-———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————— 
-
- NX   Ran target test for project test-analogjs-vitest (4s)
-
-   ×  1/1 failed
-   √  0/1 succeeded [0 read from cache]
+      Tests  1 failed (1)
+   Start at  21:57:26
+   Duration  2.96s (transform 1.56s, setup 1.44s, collect 312ms, tests 15ms, environment 357ms, prepare 1.02s)
 ```

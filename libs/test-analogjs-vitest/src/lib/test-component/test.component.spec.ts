@@ -1,18 +1,11 @@
-import { TestBed } from "@angular/core/testing";
-import { beforeEach, describe, expect, it } from "vitest";
-import { TestComponent } from "./test.component";
+import { createComponentFactory } from '@ngneat/spectator';
+import { TestComponent } from '@workspace/test-analogjs-vitest';
 
-describe("TestComponent", () => {
-  let component: TestComponent;
+describe('TestComponent', () => {
+  // Uses beforeEach.
+  const createComponent = createComponentFactory(TestComponent);
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      imports: [TestComponent],
-    });
-    component = TestBed.inject(TestComponent);
-  });
-
-  it("should create", () => {
-    expect(component).toBeTruthy();
+  it('test #1', () => {
+    expect(createComponent().component).toBeTruthy();
   });
 });
